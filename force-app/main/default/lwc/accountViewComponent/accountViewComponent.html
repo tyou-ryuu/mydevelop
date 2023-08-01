@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="取引先">
+    <div class="view">
+      <p>
+        <lightning-input
+          type="search"
+          placeholder="Search for Account"
+          onchange={searchForKeyword}
+        ></lightning-input>
+      </p>
+      <template lwc:if={accountList}>
+        <lightning-vertical-navigation onselect={handleSelect}>
+          <lightning-vertical-navigation-section>
+            <template for:each={accountList} for:item="acc" for:index="index">
+              <lightning-vertical-navigation-item
+                key={acc.Id}
+                label={acc.Name}
+                name={index}
+              >
+              </lightning-vertical-navigation-item>
+            </template>
+          </lightning-vertical-navigation-section>
+        </lightning-vertical-navigation>
+      </template>
+    </div>
+  </lightning-card>
+</template>

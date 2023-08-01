@@ -1,0 +1,17 @@
+<template>
+  <div class="slds-grid slds-gutters">
+    <div class="slds-col slds-size_1-of-3">
+      <c-account-view-component
+        onselected={handleSelect}
+        account-list={accountList}
+        onsearch={handleSearch}
+      ></c-account-view-component>
+    </div>
+    <div class="slds-col slds-size_2-of-3">
+      <c-account-detail-component
+        account={account}
+        onsuccess={handleSuccess}
+      ></c-account-detail-component>
+    </div>
+  </div>
+</template>

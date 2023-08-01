@@ -1,0 +1,46 @@
+<template>
+  <lightning-card title="詳細">
+    <div class="detail">
+      <template lwc:if={account}>
+        <lightning-record-edit-form
+          lwc:ref="form"
+          object-api-name="Account"
+          record-id={account.Id}
+          onsubmit={handleClick}
+        >
+          <lightning-messages></lightning-messages>
+          <lightning-input-field field-name="Name" value={account.Name}>
+          </lightning-input-field>
+          <lightning-input-field
+            field-name="AccountNumber"
+            value={account.AccountNumber}
+          >
+          </lightning-input-field>
+          <lightning-input-field field-name="Industry" value={account.Industry}>
+          </lightning-input-field>
+          <lightning-input-field
+            field-name="Ownership"
+            value={account.Ownership}
+          >
+          </lightning-input-field>
+          <lightning-input-field field-name="Fax" value={account.Fax}>
+          </lightning-input-field>
+          <lightning-input-field
+            field-name="Phone"
+            value={account.Phone}
+          ></lightning-input-field
+          ><br />
+          <div class="slds-text-align_right">
+            <div class="slds-var-m-right_x-small">
+              <lightning-button
+                type="submit"
+                label="保存"
+                variant="brand"
+              ></lightning-button>
+            </div>
+          </div>
+        </lightning-record-edit-form>
+      </template>
+    </div>
+  </lightning-card>
+</template>
